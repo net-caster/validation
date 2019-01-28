@@ -4,4 +4,14 @@ body {
 
 h1 {
     color: white;
+    margin-left: 15%;
+}
+
+.log-box {
+    height: 400px;
+    width: 400px;
+    background-color: beige;
+    border-radius: 10px;
+    position: absolute;
+    margin-left: 10%;
 }
