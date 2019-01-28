@@ -4,13 +4,52 @@ body {
     background: url('../images/web_bg_bw.jpg') no-repeat center center fixed;
 }
 
-.log-box {
-    height: 400px;
-    width: 400px;
+.box-login {
+    width: 300px;
+    padding: 40px;
     background-color: black;
     border-radius: 5px;
     position: absolute;
-    margin-left: 10%;
-    margin-top: 10%;
-    opacity: .4;
+    transform: translate(-50%, -50%);
+    top: 30%;
+    left: 25%;
+    opacity: .5;
+    text-align: center;
+    input[type="text"],
+    input[type="password"] {
+        border: 0;
+        background: none;
+        display: block;
+        margin: 20px auto;
+        text-align: center;
+        color: seashell;
+        border: 2px solid #2980b9;
+        width: 200px;
+        padding: 14px 10px;
+        outline: none;
+        border-radius: 15px;
+        transition: .25s;
+        &:focus {
+            width: 280px;
+            border-color: #2ecc71;
+        }
+    }
+    input[type="submit"] {
+        font-weight: 800;
+        border: 0;
+        background: none;
+        display: block;
+        margin: 20px auto;
+        text-align: center;
+        color: seashell;
+        border: 2px solid #2ecc71;
+        padding: 14px 40px;
+        outline: none;
+        border-radius: 15px;
+        transition: .25s;
+        cursor: pointer;
+        &:hover {
+            background: #2ecc71;
+        }
+    }
 }
