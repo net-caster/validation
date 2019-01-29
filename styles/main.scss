@@ -9,7 +9,7 @@ body {
     justify-content: center;
 }
 
-h1 {
+.form-titles {
     color: white;
     text-align: center;
     font-family: "Major Mono Display", monospace;
@@ -18,16 +18,22 @@ h1 {
     padding-bottom: 20px;
 }
 
+header {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: 1200px;
+    border-bottom: 1px solid rgb(224, 224, 224);
+}
+
 .title {
     display: flex;
     font-family: "Major Mono Display", monospace;
     font-weight: 600;
     font-size: 48px;
-    text-align: center;
-    width: 90%;
     color: rgb(224, 224, 224);
-    //border: 0;
-    margin-left: 5%;
+    width: 60%;
+    margin-bottom: 20px;
 }
 
 .seperator {
@@ -49,7 +55,6 @@ h1 {
     position: absolute;
     transform: translate(-50%, -50%);
     display: inline-flex;
-    align-content: center;
     .login-content,
     .register-content {
         margin: 0 auto;
