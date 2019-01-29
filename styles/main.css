@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css?family=Major+Mono+Display");
 body {
   display: flex;
@@ -125,7 +126,7 @@ header {
 }
 .forms .login-content input[type=checkbox] + label:before,
 .forms .register-content input[type=checkbox] + label:before {
-  content: "";
+  content: "✔";
   border: 0.15em solid #2980b9;
   border-radius: 0.2em;
   display: inline-block;
