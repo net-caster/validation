@@ -25,7 +25,6 @@ h1 {
   text-align: center;
   width: 90%;
   color: #e0e0e0;
-  padding-top: 10px;
   margin-left: 5%;
 }
 
@@ -103,6 +102,46 @@ h1 {
 .forms .register-content input[type=submit]:hover {
   background: #2ecc71;
 }
+.forms .login-content input[type=checkbox],
+.forms .register-content input[type=checkbox] {
+  display: none;
+}
+.forms .login-content input[type=checkbox] + label,
+.forms .register-content input[type=checkbox] + label {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  display: block;
+  color: white;
+  margin: 0.2em;
+  cursor: pointer;
+  padding: 0.2em;
+  padding-left: 4em;
+}
+.forms .login-content input[type=checkbox] + label:before,
+.forms .register-content input[type=checkbox] + label:before {
+  content: "";
+  border: 0.15em solid #2980b9;
+  border-radius: 0.2em;
+  display: inline-block;
+  width: 0.7em;
+  height: 0.7em;
+  padding-left: 0.2em;
+  padding-bottom: 0.3em;
+  margin-right: 0.2em;
+  vertical-align: bottom;
+  color: transparent;
+  transition: 0.2s;
+}
+.forms .login-content input[type=checkbox] + label:active:before,
+.forms .register-content input[type=checkbox] + label:active:before {
+  transform: scale(0);
+}
+.forms .login-content input[type=checkbox]:checked + label:before,
+.forms .register-content input[type=checkbox]:checked + label:before {
+  background-color: #2ecc71;
+  border-color: #2980b9;
+  color: #FFF;
+}
 
 footer {
   font-family: Arial, Helvetica, sans-serif;
@@ -113,6 +152,7 @@ footer {
   left: 10px;
   bottom: 0;
   position: absolute;
+  overflow: hidden;
 }
 footer span {
   font-family: monospace;
@@ -123,6 +163,7 @@ footer span {
 
 .gear-icon {
   display: flex;
+  overflow: hidden;
 }
 .gear-icon .icon {
   width: 150px;
@@ -131,6 +172,21 @@ footer span {
   bottom: 5%;
   left: 45%;
   align-self: center;
+}
+
+@media screen and (max-height: 700px) {
+  .gear-icon {
+    display: none;
+  }
+
+  .title {
+    display: none;
+  }
+}
+@media screen and (max-height: 500px) {
+  footer {
+    display: none;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */
