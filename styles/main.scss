@@ -152,11 +152,11 @@ footer {
 
 .gear-icon {
     display: block;
+    position: fixed;
     .icon {
         width: 150px;
         height: 150px;
-        position: relative;
-        top: 28em;
+        margin-top: 450px;
     }
 }
 
