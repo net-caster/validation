@@ -13,11 +13,8 @@ body {
 }
 
 header {
-    display: flex;
-    position: absolute;
     text-align: center;
-    width: 100%;
-    padding-top: 3em;
+    padding-top: 2em;
 }
 
 .title {
@@ -25,7 +22,6 @@ header {
     font-weight: 600;
     font-size: 48px;
     color: rgb(224, 224, 224);
-    margin: auto 35%;
 }
 
 .form-titles {
