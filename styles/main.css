@@ -167,12 +167,12 @@ footer span {
 
 .gear-icon {
   display: block;
-  position: fixed;
+  position: absolute;
+  margin-top: 28%;
 }
 .gear-icon .icon {
   width: 150px;
   height: 150px;
-  margin-top: 450px;
 }
 
 @media screen and (max-height: 700px) {
