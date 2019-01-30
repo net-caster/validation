@@ -151,15 +151,12 @@ footer {
 }
 
 .gear-icon {
-    display: flex;
-    overflow: hidden;
+    display: block;
     .icon {
         width: 150px;
         height: 150px;
-        position: absolute;
-        bottom: 5%;
-        left: 45%;
-        align-self: center;
+        position: relative;
+        top: 28em;
     }
 }
 
