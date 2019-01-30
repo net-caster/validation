@@ -1,12 +1,31 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css?family=Major+Mono+Display");
 body {
-  display: flex;
-  align-content: center;
   margin: 0;
   padding: 0;
   background: #1a232c;
+}
+
+.container {
+  display: flex;
+  align-content: center;
   justify-content: center;
+}
+
+header {
+  display: flex;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  padding-top: 3em;
+}
+
+.title {
+  font-family: "Major Mono Display", monospace;
+  font-weight: 600;
+  font-size: 48px;
+  color: #e0e0e0;
+  margin: auto 35%;
 }
 
 .form-titles {
@@ -16,24 +35,6 @@ body {
   border-bottom: 1px solid white;
   margin-bottom: 40px;
   padding-bottom: 20px;
-}
-
-header {
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  width: 1200px;
-  border-bottom: 1px solid #e0e0e0;
-}
-
-.title {
-  display: flex;
-  font-family: "Major Mono Display", monospace;
-  font-weight: 600;
-  font-size: 48px;
-  color: #e0e0e0;
-  width: 60%;
-  margin-bottom: 20px;
 }
 
 .seperator {
