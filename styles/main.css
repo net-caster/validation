@@ -112,8 +112,8 @@ body {
 .forms .login-content input[type=checkbox] + label,
 .forms .register-content input[type=checkbox] + label {
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 16px;
-  display: block;
+  font-size: 14px;
+  display: inline-block;
   color: white;
   margin: 0.2em;
   cursor: pointer;
@@ -126,11 +126,11 @@ body {
   border: 0.15em solid #2980b9;
   border-radius: 0.2em;
   display: inline-block;
-  width: 0.7em;
-  height: 0.7em;
+  width: 1em;
+  height: 1em;
   padding-left: 0.2em;
-  padding-bottom: 0.3em;
-  margin-right: 0.2em;
+  padding-bottom: 0.1em;
+  margin-right: 0.5em;
   vertical-align: bottom;
   color: transparent;
   transition: 0.2s;
@@ -144,6 +144,22 @@ body {
   background-color: #2ecc71;
   border-color: #2980b9;
   color: #FFF;
+}
+
+ul {
+  display: none;
+  list-style: none;
+}
+
+.input-reqs {
+  color: red;
+  font-size: 0.8rem;
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: italic;
+  text-align: center;
+  list-style: disc;
+  list-style-position: inside;
+  margin: 10px auto;
 }
 
 footer {
@@ -165,13 +181,18 @@ footer span {
 }
 
 .gear-icon {
-  display: block;
   position: fixed;
   bottom: 0;
 }
 .gear-icon .icon {
   width: 150px;
   height: 150px;
+  opacity: 1;
+  transition: 0.5s;
+}
+.gear-icon .icon:hover {
+  opacity: 0;
+  transition: 0.5s;
 }
 
 @media screen and (max-height: 700px) {

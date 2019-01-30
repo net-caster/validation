@@ -17,7 +17,7 @@
                 <form class="box-login" action="index.html" method="post">
                     <input type="text" name="" placeholder="Username">
                     <input type="password" name="" placeholder="Password">
-                    <input type="checkbox" id="remember" name="checkbox" value="remember" checked>
+                    <input type="checkbox" id="remember" name="checkbox" value="remember" checked="">
                     <label for="remember">Keep me logged in.</label>
                     <input type="submit" name="" value="Login">
                 </form>
@@ -29,7 +29,16 @@
                 <h1 class="form-titles">Register</h1>
                 <form class="box-login" action="index.html" method="post">
                     <input type="email" name="" placeholder="your@email.com" required>
-                    <input type="password" name="" placeholder="Password" required>
+                    <ul class="input-reqs">
+                        <li>Please enter valid e-mail.</li>
+                    </ul>
+                    <input type="password" name="" minlength="8" placeholder="Password" required>
+                    <ul class="input-reqs">
+                        <li>Password must be at least 8 characters</li>
+                        <li>Must contain at least 1 number</li>
+                        <li>Must contain at least 1 uppercase character</li>
+                        <li>Must not contain special characters</li>
+                    </ul>
                     <input type="checkbox" id="register" name="checkbox" value="register" required>
                     <label for="register">I agree to the terms.</label>
                     <input type="submit" name="" value="Register">
