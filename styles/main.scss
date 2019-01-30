@@ -8,11 +8,10 @@ body {
 
 .container {
     display: flex;
-    align-content: center;
     justify-content: center;
 }
 
-header {
+.header {
     text-align: center;
     padding-top: 2em;
 }
@@ -152,8 +151,8 @@ footer {
 
 .gear-icon {
     display: block;
-    position: absolute;
-    margin-top: 28%;
+    position: fixed;
+    bottom: 0;
     .icon {
         width: 150px;
         height: 150px;
