@@ -89,6 +89,14 @@ body {
                 &:-ms-input-placeholder {
                     color: transparent;
                 }
+                &:hover {
+                    border-color: #2ecc71;
+                    border-top-color: rgba(0, 0, 0, 0);
+                    border-bottom-color: rgba(0, 0, 0, 0);
+                }
+            }
+            &:hover {
+                border-color: #2ecc71;
             }
         }
         input[type="submit"] {
