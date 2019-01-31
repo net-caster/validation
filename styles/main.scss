@@ -106,6 +106,7 @@ body {
             cursor: pointer;
             &:hover {
                 background: #2ecc71;
+                color: black;
             }
         }
         input[type=checkbox] {
@@ -165,7 +166,7 @@ ul {
 footer {
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 600;
-    color: white;
+    color: rgb(216, 216, 216);
     font-size: 16px;
     float: left;
     left: 10px;
@@ -176,7 +177,6 @@ footer {
         font-family: monospace;
         font-weight: 500;
         font-size: 14px;
-        opacity: .7;
     }
 }
 
