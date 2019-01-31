@@ -12,8 +12,13 @@ body {
 }
 
 .header {
+    position: absolute;
     text-align: center;
     padding-top: 1em;
+    transform: translate(-50%, -50%);
+    top: 10%;
+    left: 50%;
+    //margin: 10%;
 }
 
 .title {
@@ -62,7 +67,7 @@ body {
             padding: 14px 10px;
             outline: none;
             border-radius: 15px;
-            transition: .2s;
+            transition: all ease .3s;
             &:focus {
                 width: 280px;
                 border-color: #2ecc71;
