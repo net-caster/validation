@@ -23,6 +23,11 @@ body {
     color: rgb(224, 224, 224);
 }
 
+
+/*
+Form styling below -----------------------------------------
+*/
+
 .form-titles {
     color: white;
     text-align: center;
@@ -34,14 +39,12 @@ body {
 
 .form {
     width: 400px;
-    background-color: rgba(0, 0, 0, .4);
+    background-color: rgba(0, 0, 0, .5);
     border-radius: 5px;
     top: 45%;
     left: 50%;
-    //padding-bottom: 0.5em;
     position: absolute;
     transform: translate(-50%, -50%);
-    //display: inline-flex;
     .login-content,
     .register-content {
         margin: 0 auto;
@@ -150,18 +153,101 @@ body {
 
 ul {
     display: none;
-    list-style: none;
 }
 
-.input-reqs {
-    color: red;
-    font-size: 0.8rem;
-    font-family: Arial, Helvetica, sans-serif;
-    font-style: italic;
-    text-align: center;
-    list-style: disc;
-    list-style-position: inside;
-    margin: 10px auto;
+
+/*
+Tooltip styling below -----------------------------------------
+*/
+
+.tooltip {
+    opacity: 0;
+    transition: all ease 0.5s;
+    &::before,
+    &::after {
+        position: absolute;
+        left: 50%;
+        text-align: center;
+        font-family: Helvetica, sans-serif;
+        font-style: italic;
+    }
+}
+
+input[type="text"]:focus+.user-tooltip {
+    &::before {
+        content: "";
+        border-width: 10px 8px 0px 8px;
+        border-style: solid;
+        border-color: rgba(0, 0, 0, .8) transparent transparent transparent;
+        transform: rotate(90deg);
+        left: 22em;
+        top: 40px;
+        text-align: center;
+    }
+    &::after {
+        content: attr(data-tooltip);
+        background: rgba(0, 0, 0, .8);
+        font-size: 14px;
+        color: seashell;
+        width: 250px;
+        padding: 14px;
+        border-radius: 10px;
+        left: 91.3%;
+        transform: translateY(-95px);
+    }
+}
+
+input[type="email"]:focus+.email-tooltip {
+    &::before {
+        content: "";
+        border-width: 10px 8px 0px 8px;
+        border-style: solid;
+        border-color: rgba(0, 0, 0, .8) transparent transparent transparent;
+        transform: rotate(90deg);
+        left: 22em;
+        top: 105px;
+        text-align: center;
+    }
+    &::after {
+        content: attr(data-tooltip);
+        background: rgba(0, 0, 0, .8);
+        font-size: 14px;
+        color: seashell;
+        width: 250px;
+        padding: 14px;
+        border-radius: 10px;
+        left: 91.3%;
+        transform: translateY(-70px);
+    }
+}
+
+input[type="password"]:focus+.password-tooltip {
+    &::before {
+        content: "";
+        border-width: 10px 8px 0px 8px;
+        border-style: solid;
+        border-color: rgba(0, 0, 0, .8) transparent transparent transparent;
+        transform: rotate(90deg);
+        left: 22em;
+        top: 175px;
+        text-align: center;
+    }
+    &::after {
+        content: attr(data-tooltip);
+        background: rgba(0, 0, 0, .8);
+        font-size: 14px;
+        color: seashell;
+        width: 250px;
+        padding: 14px;
+        border-radius: 10px;
+        left: 91.3%;
+        transform: translateY(-100px);
+    }
+}
+
+input:focus+.tooltip {
+    //transition: all ease 0.5s;
+    opacity: 1;
 }
 
 footer {
