@@ -74,7 +74,7 @@ body {
   padding: 14px 10px;
   outline: none;
   border-radius: 15px;
-  transition: 0.25s;
+  transition: 0.15s;
 }
 .forms .login-content input[type=text]:focus,
 .forms .login-content input[type=password]:focus,
@@ -84,7 +84,8 @@ body {
 .forms .register-content input[type=email]:focus {
   width: 280px;
   border-color: #2ecc71;
-  border-top: none;
+  border-top-color: rgba(0, 0, 0, 0);
+  border-bottom-color: rgba(0, 0, 0, 0);
 }
 .forms .login-content input[type=submit],
 .forms .register-content input[type=submit] {

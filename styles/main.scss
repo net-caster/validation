@@ -69,11 +69,14 @@ body {
             padding: 14px 10px;
             outline: none;
             border-radius: 15px;
-            transition: .25s;
+            transition: .15s;
             &:focus {
                 width: 280px;
                 border-color: #2ecc71;
-                border-top: none;
+                //border-top: none;
+                //border-bottom: none;
+                border-top-color: rgba(0, 0, 0, 0);
+                border-bottom-color: rgba(0, 0, 0, 0);
             }
         }
         input[type="submit"] {
