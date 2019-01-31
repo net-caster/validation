@@ -12,13 +12,8 @@ body {
 }
 
 .header {
-  position: relative;
   text-align: center;
   padding-top: 1em;
-  transform: translate(-50%, -50%);
-  top: 10%;
-  left: 30%;
-  margin: 5%;
 }
 
 .title {
