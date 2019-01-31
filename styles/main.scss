@@ -13,7 +13,7 @@ body {
 
 .header {
     text-align: center;
-    padding-top: 2em;
+    padding-top: 1em;
 }
 
 .title {
@@ -34,7 +34,7 @@ body {
 
 .form {
     width: 400px;
-    background-color: rgba(0, 0, 0, .3);
+    background-color: rgba(0, 0, 0, .4);
     border-radius: 5px;
     top: 45%;
     left: 50%;
@@ -54,6 +54,7 @@ body {
             display: block;
             margin: 20px auto;
             font-family: Arial, Helvetica, sans-serif;
+            font-weight: 600;
             text-align: center;
             color: white;
             border: 2px solid #2980b9;
@@ -63,7 +64,6 @@ body {
             border-radius: 15px;
             transition: .2s;
             &:focus {
-                font-weight: 600;
                 width: 280px;
                 border-color: #2ecc71;
                 border-top-color: rgba(0, 0, 0, 0);
@@ -114,6 +114,7 @@ body {
             &+label {
                 font-family: Arial, Helvetica, sans-serif;
                 font-size: 14px;
+                font-weight: 600;
                 display: inline-block;
                 color: white;
                 margin: 0.2em;
@@ -175,7 +176,7 @@ footer {
     overflow: hidden;
     span {
         font-family: monospace;
-        font-weight: 500;
+        font-weight: 600;
         font-size: 14px;
     }
 }
