@@ -73,6 +73,7 @@ body {
             &:focus {
                 width: 280px;
                 border-color: #2ecc71;
+                border-top: none;
             }
         }
         input[type="submit"] {
