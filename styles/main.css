@@ -203,7 +203,7 @@ Tooltip styling below -----------------------------------------
 */
 .tooltip {
   opacity: 0;
-  transition: all ease 0.5s;
+  transition: all ease 0.3s;
 }
 .tooltip::before, .tooltip::after {
   position: absolute;
@@ -213,7 +213,7 @@ Tooltip styling below -----------------------------------------
   font-style: italic;
 }
 
-input[type=text]:focus + .user-tooltip::before {
+input[type=text] + .user-tooltip::before {
   content: "";
   border-width: 10px 8px 0px 8px;
   border-style: solid;
@@ -223,7 +223,7 @@ input[type=text]:focus + .user-tooltip::before {
   top: 40px;
   text-align: center;
 }
-input[type=text]:focus + .user-tooltip::after {
+input[type=text] + .user-tooltip::after {
   content: attr(data-tooltip);
   background: rgba(0, 0, 0, 0.8);
   font-size: 14px;
@@ -235,7 +235,7 @@ input[type=text]:focus + .user-tooltip::after {
   transform: translateY(-95px);
 }
 
-input[type=email]:focus + .email-tooltip::before {
+input[type=email] + .email-tooltip::before {
   content: "";
   border-width: 10px 8px 0px 8px;
   border-style: solid;
@@ -245,7 +245,7 @@ input[type=email]:focus + .email-tooltip::before {
   top: 105px;
   text-align: center;
 }
-input[type=email]:focus + .email-tooltip::after {
+input[type=email] + .email-tooltip::after {
   content: attr(data-tooltip);
   background: rgba(0, 0, 0, 0.8);
   font-size: 14px;
@@ -257,7 +257,7 @@ input[type=email]:focus + .email-tooltip::after {
   transform: translateY(-70px);
 }
 
-input[type=password]:focus + .password-tooltip::before {
+input[type=password] + .password-tooltip::before {
   content: "";
   border-width: 10px 8px 0px 8px;
   border-style: solid;
@@ -267,7 +267,7 @@ input[type=password]:focus + .password-tooltip::before {
   top: 175px;
   text-align: center;
 }
-input[type=password]:focus + .password-tooltip::after {
+input[type=password] + .password-tooltip::after {
   content: attr(data-tooltip);
   background: rgba(0, 0, 0, 0.8);
   font-size: 14px;
