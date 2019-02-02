@@ -15,7 +15,7 @@
         <div class="form">
             <div class="register-content">
                 <form class="box-login" action="index.html" method="post">
-                    <input type="text" id="username" name="username" minlength="6" placeholder="Username" required="">
+                    <input type="text" id="username" name="username" minlength="6" maxlength="12" placeholder="Username" required>
                     <ul class="input-reqs">
                         <li>Username must be at least 6 characters long</li>
                         <li>Must contain at least 1 number</li>
@@ -28,7 +28,7 @@
                         <li>Please enter a valid e-mail address</li>
                     </ul>
                     <!-- <span class="tooltip email-tooltip" data-tooltip="You must enter a valid e-mail address."></span> -->
-                    <input type="password" name="password" minlength="8" placeholder="Password" required>
+                    <input type="password" name="password" minlength="8" maxlength="20" placeholder="Password" required>
                     <ul class="input-reqs">
                         <li>Password must be at least 8 characters long</li>
                         <li>Must contain at least 1 number</li>
