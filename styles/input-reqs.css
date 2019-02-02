@@ -1,0 +1,29 @@
+/* Input requrements ------------------------- */
+.input-reqs {
+  color: #be0000;
+  font-family: Helvetica, sans-serif;
+  font-style: italic;
+  font-size: 12px;
+  font-weight: 700;
+  text-align: center;
+  list-style: disc;
+  list-style: inside;
+  width: 350px;
+  margin-left: -20%;
+  margin-top: -10px;
+  margin-bottom: -10px;
+}
+
+input:not([type=submit]) + .input-reqs {
+  max-height: 0;
+  opacity: 0;
+  transition: all 0.5s ease-out;
+}
+
+input:not([type=submit]):focus + .input-reqs {
+  max-height: 500px;
+  opacity: 1;
+  transition: all 0.5s ease-in;
+}
+
+/*# sourceMappingURL=input-reqs.css.map */
