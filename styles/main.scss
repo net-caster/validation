@@ -13,7 +13,7 @@ body {
 
 .header {
     text-align: center;
-    padding-top: 1em;
+    padding-top: 0.5em;
 }
 
 .title {
@@ -150,16 +150,13 @@ Form styling below -----------------------------------------
     }
 }
 
-ul {
-    display: none;
-}
-
 
 /*
 Tooltip styling below -----------------------------------------
 */
 
-.tooltip {
+
+/* .tooltip {
     opacity: 0;
     transition: all ease 0.3s;
     &::before,
@@ -181,6 +178,7 @@ input[type="text"]+.user-tooltip {
         transform: rotate(90deg);
         left: 22em;
         top: 40px;
+        //transform: translateY(-95px);
         text-align: center;
     }
     &::after {
@@ -246,6 +244,34 @@ input[type="password"]+.password-tooltip {
 
 input:focus+.tooltip {
     opacity: 1;
+} */
+
+
+/* Input requrements styling ------------------------- */
+
+.input-reqs {
+    color: rgb(190, 0, 0);
+    font-family: Helvetica, sans-serif;
+    font-style: italic;
+    font-size: 12px;
+    font-weight: 700;
+    list-style: disc;
+    list-style: inside;
+    width: 350px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: -35px;
+}
+
+input:not([type="submit"])+.input-reqs {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.5s ease-out;
+}
+
+input:not([type="submit"]):focus+.input-reqs {
+    max-height: 500px;
+    transition: max-height 0.5s ease-in;
 }
 
 

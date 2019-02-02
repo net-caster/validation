@@ -13,7 +13,7 @@ body {
 
 .header {
   text-align: center;
-  padding-top: 1em;
+  padding-top: 0.5em;
 }
 
 .title {
@@ -162,93 +162,122 @@ Form styling below -----------------------------------------
   color: #FFF;
 }
 
-ul {
-  display: none;
-}
-
 /*
 Tooltip styling below -----------------------------------------
 */
-.tooltip {
-  opacity: 0;
-  transition: all ease 0.3s;
+/* .tooltip {
+    opacity: 0;
+    transition: all ease 0.3s;
+    &::before,
+    &::after {
+        position: absolute;
+        left: 50%;
+        text-align: center;
+        font-family: Helvetica, sans-serif;
+        font-style: italic;
+    }
 }
-.tooltip::before, .tooltip::after {
-  position: absolute;
-  left: 50%;
-  text-align: center;
+
+input[type="text"]+.user-tooltip {
+    &::before {
+        content: "";
+        border-width: 10px 8px 0px 8px;
+        border-style: solid;
+        border-color: rgba(0, 0, 0, .8) transparent transparent transparent;
+        transform: rotate(90deg);
+        left: 22em;
+        top: 40px;
+        //transform: translateY(-95px);
+        text-align: center;
+    }
+    &::after {
+        content: attr(data-tooltip);
+        background: rgba(0, 0, 0, .8);
+        font-size: 14px;
+        color: seashell;
+        width: 250px;
+        padding: 14px;
+        border-radius: 10px;
+        left: 91.3%;
+        transform: translateY(-95px);
+    }
+}
+
+input[type="email"]+.email-tooltip {
+    &::before {
+        content: "";
+        border-width: 10px 8px 0px 8px;
+        border-style: solid;
+        border-color: rgba(0, 0, 0, .8) transparent transparent transparent;
+        transform: rotate(90deg);
+        left: 22em;
+        top: 105px;
+        text-align: center;
+    }
+    &::after {
+        content: attr(data-tooltip);
+        background: rgba(0, 0, 0, .8);
+        font-size: 14px;
+        color: seashell;
+        width: 250px;
+        padding: 14px;
+        border-radius: 10px;
+        left: 91.3%;
+        transform: translateY(-70px);
+    }
+}
+
+input[type="password"]+.password-tooltip {
+    &::before {
+        content: "";
+        border-width: 10px 8px 0px 8px;
+        border-style: solid;
+        border-color: rgba(0, 0, 0, .8) transparent transparent transparent;
+        transform: rotate(90deg);
+        left: 22em;
+        top: 175px;
+        text-align: center;
+    }
+    &::after {
+        content: attr(data-tooltip);
+        background: rgba(0, 0, 0, .8);
+        font-size: 14px;
+        color: seashell;
+        width: 250px;
+        padding: 14px;
+        border-radius: 10px;
+        left: 91.3%;
+        transform: translateY(-100px);
+    }
+}
+
+input:focus+.tooltip {
+    opacity: 1;
+} */
+/* Input requrements styling ------------------------- */
+.input-reqs {
+  color: #be0000;
   font-family: Helvetica, sans-serif;
   font-style: italic;
+  font-size: 12px;
+  font-weight: 700;
+  list-style: disc;
+  list-style: inside;
+  width: 350px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: -35px;
 }
 
-input[type=text] + .user-tooltip::before {
-  content: "";
-  border-width: 10px 8px 0px 8px;
-  border-style: solid;
-  border-color: rgba(0, 0, 0, 0.8) transparent transparent transparent;
-  transform: rotate(90deg);
-  left: 22em;
-  top: 40px;
-  text-align: center;
-}
-input[type=text] + .user-tooltip::after {
-  content: attr(data-tooltip);
-  background: rgba(0, 0, 0, 0.8);
-  font-size: 14px;
-  color: seashell;
-  width: 250px;
-  padding: 14px;
-  border-radius: 10px;
-  left: 91.3%;
-  transform: translateY(-95px);
+input:not([type=submit]) + .input-reqs {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.5s ease-out;
 }
 
-input[type=email] + .email-tooltip::before {
-  content: "";
-  border-width: 10px 8px 0px 8px;
-  border-style: solid;
-  border-color: rgba(0, 0, 0, 0.8) transparent transparent transparent;
-  transform: rotate(90deg);
-  left: 22em;
-  top: 105px;
-  text-align: center;
-}
-input[type=email] + .email-tooltip::after {
-  content: attr(data-tooltip);
-  background: rgba(0, 0, 0, 0.8);
-  font-size: 14px;
-  color: seashell;
-  width: 250px;
-  padding: 14px;
-  border-radius: 10px;
-  left: 91.3%;
-  transform: translateY(-70px);
-}
-
-input[type=password] + .password-tooltip::before {
-  content: "";
-  border-width: 10px 8px 0px 8px;
-  border-style: solid;
-  border-color: rgba(0, 0, 0, 0.8) transparent transparent transparent;
-  transform: rotate(90deg);
-  left: 22em;
-  top: 175px;
-  text-align: center;
-}
-input[type=password] + .password-tooltip::after {
-  content: attr(data-tooltip);
-  background: rgba(0, 0, 0, 0.8);
-  font-size: 14px;
-  color: seashell;
-  width: 250px;
-  padding: 14px;
-  border-radius: 10px;
-  left: 91.3%;
-  transform: translateY(-100px);
-}
-
-input:focus + .tooltip {
-  opacity: 1;
+input:not([type=submit]):focus + .input-reqs {
+  max-height: 500px;
+  transition: max-height 0.5s ease-in;
 }
 
 /*

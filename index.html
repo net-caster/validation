@@ -15,18 +15,27 @@
         <div class="form">
             <div class="register-content">
                 <form class="box-login" action="index.html" method="post">
-                    <input type="text" name="" minlength="6" placeholder="Username" required="">
-                    <span class="tooltip user-tooltip" data-tooltip="Your username must be at least 6 characters long and contain at least 1 number, 1 uppercase character and no special characters"></span>
-                    <ul class="tooltip user-tooltip">
+                    <input type="text" id="username" name="username" minlength="6" placeholder="Username" required="">
+                    <ul class="input-reqs">
                         <li>Username must be at least 6 characters long</li>
                         <li>Must contain at least 1 number</li>
                         <li>Must contain at least 1 uppercase character</li>
                         <li>Must not contain special characters</li>
                     </ul>
-                    <input type="email" name="" placeholder="your@email.com" required>
-                    <span class="tooltip email-tooltip" data-tooltip="You must enter a valid e-mail address."></span>
-                    <input type="password" name="" minlength="8" placeholder="Password" required>
-                    <span class="tooltip password-tooltip" data-tooltip="Your password must be at least 8 characters long and contain at least 1 number, 1 uppercase character and 1 special character"></span>
+                    <!-- <span class="tooltip user-tooltip" data-tooltip="Your username must be at least 6 characters long and contain at least 1 number, 1 uppercase character and no special characters"></span> -->
+                    <input type="email" name="email" placeholder="your@email.com" required>
+                    <ul class="input-reqs">
+                        <li>Please enter a valid e-mail address</li>
+                    </ul>
+                    <!-- <span class="tooltip email-tooltip" data-tooltip="You must enter a valid e-mail address."></span> -->
+                    <input type="password" name="password" minlength="8" placeholder="Password" required>
+                    <ul class="input-reqs">
+                        <li>Pasword must be at least 8 characters long</li>
+                        <li>Must contain at least 1 number</li>
+                        <li>Must contain at least 1 uppercase character</li>
+                        <li>Must not contain special characters(except @, !, -, and +)</li>
+                    </ul>
+                    <!-- <span class="tooltip password-tooltip" data-tooltip="Your password must be at least 8 characters long and contain at least 1 number, 1 uppercase character and 1 special character"></span> -->
 
                     <input type="checkbox" id="register" name="checkbox" value="register" required="">
                     <label for="register">Here! Have my soul.</label>
