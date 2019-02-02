@@ -261,12 +261,13 @@ input:focus+.tooltip {
   font-style: italic;
   font-size: 12px;
   font-weight: 700;
+  text-align: center;
   list-style: disc;
   list-style: inside;
   width: 350px;
   margin-top: 10px;
   margin-bottom: 10px;
-  margin-left: -35px;
+  margin-left: -20%;
 }
 
 input:not([type=submit]) + .input-reqs {
