@@ -1,3 +1,74 @@
+.user-input {
+  opacity: 0;
+  transition: all ease 0.3s;
+  position: absolute;
+  font-family: Helvetica, sans-serif;
+  font-style: italic;
+  font-weight: 600;
+  font-size: 12px;
+  background: rgba(0, 0, 0, 0.8);
+  color: #9e0000;
+  width: 350px;
+  padding: 10px 30px 10px 0;
+  border-radius: 10px;
+  left: 93%;
+  line-height: 1.5rem;
+}
+.user-input .tooltip-reqs {
+  text-align: center;
+  list-style: disc;
+  list-style: inside;
+}
+
+.username-tooltip {
+  transform: translateY(-105px);
+}
+
+.email-tooltip {
+  transform: translateY(-80px);
+}
+
+.password-tooltip {
+  transform: translateY(-125px);
+}
+
+input[type=text] + .username-tooltip::before {
+  content: "";
+  position: absolute;
+  border-width: 10px 8px 0px 8px;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.8) transparent transparent transparent;
+  transform: rotate(90deg);
+  margin-left: -1.1em;
+  top: 55px;
+}
+
+input[type=email] + .email-tooltip::before {
+  content: "";
+  position: absolute;
+  border-width: 10px 8px 0px 8px;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.8) transparent transparent transparent;
+  transform: rotate(90deg);
+  margin-left: -1.1em;
+  top: 30px;
+}
+
+input[type=password] + .password-tooltip::before {
+  content: "";
+  position: absolute;
+  border-width: 10px 8px 0px 8px;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.8) transparent transparent transparent;
+  transform: rotate(90deg);
+  margin-left: -1.1em;
+  top: 75px;
+}
+
+input:focus + .user-input {
+  opacity: 1;
+}
+
 /*
 Tooltip styling -----------------------------------------
 */
