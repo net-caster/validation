@@ -73,6 +73,11 @@ Responsive design -----------------------------------------
     display: none;
   }
 }
+@media only screen and (min-width: 1100px) {
+  .input-reqs {
+    display: none;
+  }
+}
 @media only screen and (max-height: 700px) {
   .gear-icon {
     display: none;

@@ -4,10 +4,10 @@
 <head>
     <meta charset="utf-8">
     <title>Future-Proof Engineering</title>
-    <link href='styles/main.css' type='text/css' rel='stylesheet'>
-    <link href='styles/form.css' type='text/css' rel='stylesheet'>
-    <link href='styles/input-reqs.css' type='text/css' rel='stylesheet'>
-    <link href='styles/tooltip.css' type='text/css' rel='stylesheet'>
+    <link href='styles/css/main.css' type='text/css' rel='stylesheet'>
+    <link href='styles/css/form.css' type='text/css' rel='stylesheet'>
+    <link href='styles/css/input-reqs.css' type='text/css' rel='stylesheet'>
+    <link href='styles/css/tooltip.css' type='text/css' rel='stylesheet'>
 </head>
 
 <body>
@@ -21,8 +21,17 @@
                 <form class="box-login" action="index.html" method="post">
                     <input type="text" name="username" placeholder="Username">
 
-                    <div class="user-input username-tooltip">
-                        <ul class="tooltip-reqs">
+                    <div class="reg-reqs">
+                        <div class="user-input username-tooltip">
+                            <ul class="tooltip-reqs">
+                                <li>Username must be at least 6 characters long</li>
+                                <li>Must contain at least 1 number</li>
+                                <li>Must contain at least 1 uppercase character</li>
+                                <li>Must not contain special characters</li>
+                            </ul>
+                        </div>
+
+                        <ul class="input-reqs">
                             <li>Username must be at least 6 characters long</li>
                             <li>Must contain at least 1 number</li>
                             <li>Must contain at least 1 uppercase character</li>
@@ -30,41 +39,40 @@
                         </ul>
                     </div>
 
-                    <!-- <ul class="input-reqs">
-                        <li>Username must be at least 6 characters long</li>
-                        <li>Must contain at least 1 number</li>
-                        <li>Must contain at least 1 uppercase character</li>
-                        <li>Must not contain special characters</li>
-                    </ul> -->
+
                     <input type="text" name="email" placeholder="your@email.com">
 
-                    <div class="user-input email-tooltip">
-                        <ul class="tooltip-reqs">
+                    <div class="reg-reqs">
+                        <div class="user-input email-tooltip">
+                            <ul class="tooltip-reqs">
+                                <li>Please enter a valid e-mail address</li>
+                            </ul>
+                        </div>
+
+                        <ul class="input-reqs">
                             <li>Please enter a valid e-mail address</li>
                         </ul>
                     </div>
 
-                    <!-- <ul class="input-reqs">
-                        <li>Please enter a valid e-mail address</li>
-                    </ul> -->
-
                     <input type="password" name="password" placeholder="Password">
 
-                    <div class="user-input password-tooltip">
-                        <ul class="tooltip-reqs">
+                    <div class="reg-reqs">
+                        <div class="user-input password-tooltip">
+                            <ul class="tooltip-reqs">
+                                <li>Password must be at least 8 characters long</li>
+                                <li>Must contain at least 1 number</li>
+                                <li>Must contain at least 1 uppercase character</li>
+                                <li>Must not contain special characters(except @, !, -, and +)</li>
+                            </ul>
+                        </div>
+
+                        <ul class="input-reqs">
                             <li>Password must be at least 8 characters long</li>
                             <li>Must contain at least 1 number</li>
                             <li>Must contain at least 1 uppercase character</li>
                             <li>Must not contain special characters(except @, !, -, and +)</li>
                         </ul>
                     </div>
-
-                    <!-- <ul class="input-reqs">
-                        <li>Password must be at least 8 characters long</li>
-                        <li>Must contain at least 1 number</li>
-                        <li>Must contain at least 1 uppercase character</li>
-                        <li>Must not contain special characters(except @, !, -, and +)</li>
-                    </ul> -->
 
                     <input type="checkbox" id="register" name="checkbox" value="register" required="">
 

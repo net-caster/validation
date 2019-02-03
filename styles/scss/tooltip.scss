@@ -33,7 +33,7 @@
     transform: translateY(-125px);
 }
 
-input[name="username"]+.username-tooltip {
+input[name="username"]+.reg-reqs .username-tooltip {
     &::before {
         content: "";
         position: absolute;
@@ -46,7 +46,7 @@ input[name="username"]+.username-tooltip {
     }
 }
 
-input[name="email"]+.email-tooltip {
+input[name="email"]+.reg-reqs .email-tooltip {
     &::before {
         content: "";
         position: absolute;
@@ -59,7 +59,7 @@ input[name="email"]+.email-tooltip {
     }
 }
 
-input[name="password"]+.password-tooltip {
+input[name="password"]+.reg-reqs .password-tooltip {
     &::before {
         content: "";
         position: absolute;
@@ -72,13 +72,10 @@ input[name="password"]+.password-tooltip {
     }
 }
 
-input:focus+.user-input {
+input:focus+.reg-reqs .user-input {
     opacity: 1;
 }
 
-// .input-reqs {
-//     display: none;
-// }
 
 /*
 Tooltip styling -----------------------------------------

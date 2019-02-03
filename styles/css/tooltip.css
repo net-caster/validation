@@ -32,7 +32,7 @@
   transform: translateY(-125px);
 }
 
-input[name=username] + .username-tooltip::before {
+input[name=username] + .reg-reqs .username-tooltip::before {
   content: "";
   position: absolute;
   border-width: 10px 8px 0px 8px;
@@ -43,7 +43,7 @@ input[name=username] + .username-tooltip::before {
   top: 55px;
 }
 
-input[name=email] + .email-tooltip::before {
+input[name=email] + .reg-reqs .email-tooltip::before {
   content: "";
   position: absolute;
   border-width: 10px 8px 0px 8px;
@@ -54,7 +54,7 @@ input[name=email] + .email-tooltip::before {
   top: 30px;
 }
 
-input[name=password] + .password-tooltip::before {
+input[name=password] + .reg-reqs .password-tooltip::before {
   content: "";
   position: absolute;
   border-width: 10px 8px 0px 8px;
@@ -65,7 +65,7 @@ input[name=password] + .password-tooltip::before {
   top: 75px;
 }
 
-input:focus + .user-input {
+input:focus + .reg-reqs .user-input {
   opacity: 1;
 }
 
