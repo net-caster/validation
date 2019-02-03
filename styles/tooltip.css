@@ -32,7 +32,7 @@
   transform: translateY(-125px);
 }
 
-input[type=text] + .username-tooltip::before {
+input[name=username] + .username-tooltip::before {
   content: "";
   position: absolute;
   border-width: 10px 8px 0px 8px;
@@ -43,7 +43,7 @@ input[type=text] + .username-tooltip::before {
   top: 55px;
 }
 
-input[type=email] + .email-tooltip::before {
+input[name=email] + .email-tooltip::before {
   content: "";
   position: absolute;
   border-width: 10px 8px 0px 8px;
@@ -54,7 +54,7 @@ input[type=email] + .email-tooltip::before {
   top: 30px;
 }
 
-input[type=password] + .password-tooltip::before {
+input[name=password] + .password-tooltip::before {
   content: "";
   position: absolute;
   border-width: 10px 8px 0px 8px;

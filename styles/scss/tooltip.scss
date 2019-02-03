@@ -33,7 +33,7 @@
     transform: translateY(-125px);
 }
 
-input[type="text"]+.username-tooltip {
+input[name="username"]+.username-tooltip {
     &::before {
         content: "";
         position: absolute;
@@ -46,7 +46,7 @@ input[type="text"]+.username-tooltip {
     }
 }
 
-input[type="email"]+.email-tooltip {
+input[name="email"]+.email-tooltip {
     &::before {
         content: "";
         position: absolute;
@@ -59,7 +59,7 @@ input[type="email"]+.email-tooltip {
     }
 }
 
-input[type="password"]+.password-tooltip {
+input[name="password"]+.password-tooltip {
     &::before {
         content: "";
         position: absolute;
