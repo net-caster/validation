@@ -96,22 +96,21 @@ Form styling -----------------------------------------
 .form .register-content input[name=email].valid:focus {
   color: black;
   background: #2ecc71;
-  border-top-color: rgba(0, 0, 0, 0);
-  border-bottom-color: rgba(0, 0, 0, 0);
+  border-color: rgba(0, 0, 0, 0);
 }
 .form .register-content input[name=username].invalid,
 .form .register-content input[name=password].invalid,
 .form .register-content input[name=email].invalid {
-  color: black;
+  color: white;
   background: #bd0000;
+  border-color: #bd0000;
 }
 .form .register-content input[name=username].invalid:focus,
 .form .register-content input[name=password].invalid:focus,
 .form .register-content input[name=email].invalid:focus {
-  color: black;
+  color: white;
   background: #bd0000;
-  border-top-color: rgba(0, 0, 0, 0);
-  border-bottom-color: rgba(0, 0, 0, 0);
+  border-color: rgba(0, 0, 0, 0);
 }
 .form .register-content input[type=submit] {
   font-weight: 800;

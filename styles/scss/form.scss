@@ -70,22 +70,21 @@ Form styling -----------------------------------------
             }
             &.valid {
                 color: black;
-                background: #2ecc71;
+                background: rgb(46, 204, 113);
                 &:focus {
                     color: black;
-                    background: #2ecc71;
-                    border-top-color: rgba(0, 0, 0, 0);
-                    border-bottom-color: rgba(0, 0, 0, 0);
+                    background: rgb(46, 204, 113);
+                    border-color: rgba(0, 0, 0, 0);
                 }
             }
             &.invalid {
-                color: black;
+                color: white;
                 background: rgb(189, 0, 0);
+                border-color: rgb(189, 0, 0);
                 &:focus {
-                    color: black;
+                    color: white;
                     background: rgb(189, 0, 0);
-                    border-top-color: rgba(0, 0, 0, 0);
-                    border-bottom-color: rgba(0, 0, 0, 0);
+                    border-color: rgba(0, 0, 0, 0);
                 }
             }
         }
