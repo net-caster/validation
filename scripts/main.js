@@ -28,5 +28,3 @@ inputs.forEach(input => {
         validate(e.target, regPat[0][e.target.attributes.name.value]);
     });
 });
-
-// patterns.forEach(el => console.log(el));
