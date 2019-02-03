@@ -46,7 +46,7 @@ Form styling -----------------------------------------
 .form .register-content input[type=password]:focus,
 .form .register-content input[type=email]:focus {
   width: 280px;
-  border-color: #2ecc71;
+  border-color: white;
   border-top-color: rgba(0, 0, 0, 0);
   border-bottom-color: rgba(0, 0, 0, 0);
 }
@@ -73,7 +73,7 @@ Form styling -----------------------------------------
 .form .register-content input[type=text]:focus:hover,
 .form .register-content input[type=password]:focus:hover,
 .form .register-content input[type=email]:focus:hover {
-  border-color: #2ecc71;
+  border-color: white;
   border-top-color: rgba(0, 0, 0, 0);
   border-bottom-color: rgba(0, 0, 0, 0);
 }
@@ -81,6 +81,30 @@ Form styling -----------------------------------------
 .form .register-content input[type=password]:hover,
 .form .register-content input[type=email]:hover {
   border-color: #2ecc71;
+}
+.form .register-content input[type=text].valid,
+.form .register-content input[type=password].valid,
+.form .register-content input[type=email].valid {
+  border-color: #2ecc71;
+}
+.form .register-content input[type=text].valid:focus,
+.form .register-content input[type=password].valid:focus,
+.form .register-content input[type=email].valid:focus {
+  border-color: #2ecc71;
+  border-top-color: rgba(0, 0, 0, 0);
+  border-bottom-color: rgba(0, 0, 0, 0);
+}
+.form .register-content input[type=text].invalid,
+.form .register-content input[type=password].invalid,
+.form .register-content input[type=email].invalid {
+  border-color: #bd0000;
+}
+.form .register-content input[type=text].invalid:focus,
+.form .register-content input[type=password].invalid:focus,
+.form .register-content input[type=email].invalid:focus {
+  border-color: #bd0000;
+  border-top-color: rgba(0, 0, 0, 0);
+  border-bottom-color: rgba(0, 0, 0, 0);
 }
 .form .register-content input[type=submit] {
   font-weight: 800;
@@ -138,5 +162,24 @@ Form styling -----------------------------------------
   border-color: #2980b9;
   color: #FFF;
 }
+
+/* input {
+    &.valid {
+        color: black !important;
+        background: #2ecc71 !important;
+        &:focus {
+            color: black !important;
+            background: #2ecc71 !important;
+        }
+    }
+    &.invalid {
+        color: black !important;
+        background: red !important;
+        &:focus {
+            color: black !important;
+            background: red !important;
+        }
+    }
+} */
 
 /*# sourceMappingURL=form.css.map */
