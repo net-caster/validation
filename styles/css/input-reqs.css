@@ -26,4 +26,8 @@ input:not([type=submit]):focus + .reg-reqs .input-reqs {
   transition: all 0.5s ease-in;
 }
 
+li.valid {
+  color: #2ecc71;
+}
+
 /*# sourceMappingURL=input-reqs.css.map */

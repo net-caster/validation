@@ -28,3 +28,7 @@ input:not([type="submit"]):focus+.reg-reqs .input-reqs {
     opacity: 1;
     transition: all .5s ease-in;
 }
+
+li.valid {
+    color: #2ecc71;
+}
