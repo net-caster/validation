@@ -3,7 +3,13 @@ const patterns = [{
         isInvalid: function(input) {
             return input.value.length < 4 || input.value.length > 12;
         },
-        listItems: document.querySelectorAll('.user-list li:nth-child(1)')
+        listItems: document.querySelectorAll('.user-list li:nth-child(1)'),
+    },
+    {
+        isInvalid: function(input) {
+            return !input.value.match(/[0-9]/g);
+        },
+        listItems: document.querySelectorAll('.user-list li:nth-child(2)')
     },
     {
         email: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/i
@@ -13,11 +19,8 @@ const patterns = [{
     }
 ];
 
-const validities = [{
 
-}]
-
-const inputFields = document.querySelectorAll('input');
+const inputs = document.querySelectorAll('input');
 
 
 const validate = (field, regex) => {
@@ -26,25 +29,51 @@ const validate = (field, regex) => {
     } else {
         field.className = 'invalid';
     }
-}
+};
 
-const checkInputs = (inputs) => {
-    inputs.forEach(input => {
+const validities = (fields) => {
+    fields.forEach(input => {
+        for (let i = 0; i < patterns.length; i++) {
+            let isInvalid = patterns[i].isInvalid(input);
+            let listElems = patterns[i].listItems;
+            console.log(isInvalid);
+            console.log(input.value);
+            console.log(listElems);
+            listElems.forEach(el => {
+                if (el) {
+                    if (isInvalid) {
+                        el.className = 'invalid';
+                        // el.classList.add('invalid');
+                        // el.classList.remove('valid');
+                    } else {
+                        el.className = 'valid';
+                        // el.classList.add('valid');
+                        // el.classList.remove('invalid');
+                    }
+                }
+            })
+
+        }
+    });
+};
+
+const checkInputs = (fields) => {
+    fields.forEach(input => {
         input.addEventListener('keyup', e => {
-            // console.log(e.target.attributes.name.value);
             let regPat = patterns.filter(obj => obj[e.target.attributes.name.value]);
-            // console.log(regPat);
             validate(e.target, regPat[0][e.target.attributes.name.value]);
+            console.log(regPat);
+            validities(inputs);
         });
     });
 }
 
-checkInputs(inputFields);
+checkInputs(inputs);
 
 /* let userObj = patterns.filter(obj => obj.listItems);
 
 userObj[0].listItems.forEach(item => {
     item.className = 'valid';
-})
+});
 
-console.log(userObj[0].listItem[1]); */
+console.log(userObj[0].listItems[1]); */
