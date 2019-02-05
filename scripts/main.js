@@ -1,15 +1,8 @@
+const inputs = document.querySelectorAll('input');
+
 const patterns = [{
-        username: /^[a-z\d]{4,12}$/i,
-        isInvalid: function(input) {
-            return input.value.length < 4 || input.value.length > 12;
-        },
-        listItems: document.querySelectorAll('.user-list li:nth-child(1)'),
-    },
-    {
-        isInvalid: function(input) {
-            return !input.value.match(/[0-9]/g);
-        },
-        listItems: document.querySelectorAll('.user-list li:nth-child(2)')
+        username: /^[\w\d]{4,12}$/i,
+
     },
     {
         email: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/i
@@ -19,11 +12,29 @@ const patterns = [{
     }
 ];
 
+const invalidities = [{
+    username: [{
+            isInvalid: function(input) {
+                return input.value.length < 4 || input.value.length > 12;
+            },
+            listItems: document.querySelectorAll('.user-list li:nth-child(1)')
+        },
+        {
+            isInvalid: function(input) {
+                return !input.value.match(/[0-9]/g);
+            },
+            listItems: document.querySelectorAll('.user-list li:nth-child(2)')
+        }
+    ],
+    email: [
 
-const inputs = document.querySelectorAll('input');
+    ],
+    password: [
 
+    ]
+}, ];
 
-const validate = (field, regex) => {
+const checkRegex = (field, regex) => {
     if (regex.test(field.value)) {
         field.className = 'valid';
     } else {
@@ -43,16 +54,11 @@ const validities = (fields) => {
                 if (el) {
                     if (isInvalid) {
                         el.className = 'invalid';
-                        // el.classList.add('invalid');
-                        // el.classList.remove('valid');
                     } else {
                         el.className = 'valid';
-                        // el.classList.add('valid');
-                        // el.classList.remove('invalid');
                     }
                 }
-            })
-
+            });
         }
     });
 };
@@ -61,7 +67,7 @@ const checkInputs = (fields) => {
     fields.forEach(input => {
         input.addEventListener('keyup', e => {
             let regPat = patterns.filter(obj => obj[e.target.attributes.name.value]);
-            validate(e.target, regPat[0][e.target.attributes.name.value]);
+            checkRegex(e.target, regPat[0][e.target.attributes.name.value]);
             console.log(regPat);
             validities(inputs);
         });
@@ -77,3 +83,9 @@ userObj[0].listItems.forEach(item => {
 });
 
 console.log(userObj[0].listItems[1]); */
+
+inputs.forEach(input => {
+    input.addEventListener('focus', e => {
+        console.log(e.target.attributes.name.value);
+    })
+})
