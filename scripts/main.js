@@ -1,91 +1,127 @@
 const inputs = document.querySelectorAll('input');
 
+const events = ['keyup', 'focusout'];
+
 const patterns = [{
-        username: /^[\w\d]{4,12}$/i,
+        username: /^[a-zA-Z\d]{4,12}$/i,
 
     },
     {
         email: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/i
     },
     {
-        password: /^[\w]{8,20}$/i
+        password: /^[a-zA-Z\d\@\!\-\+\?]{8,20}$/
     }
 ];
 
-const invalidities = [{
+const invalidities = {
     username: [{
             isInvalid: function(input) {
                 return input.value.length < 4 || input.value.length > 12;
             },
-            listItems: document.querySelectorAll('.user-list li:nth-child(1)')
+            listElems: document.querySelectorAll('.user-list li:nth-child(1)')
         },
         {
             isInvalid: function(input) {
-                return !input.value.match(/[0-9]/g);
+                return !input.value.match(/[\d]/g);
             },
-            listItems: document.querySelectorAll('.user-list li:nth-child(2)')
+            listElems: document.querySelectorAll('.user-list li:nth-child(2)')
+        },
+        {
+            isInvalid: function(input) {
+                return input.value.match(/[^a-zA-Z\d]/g)
+            },
+            listElems: document.querySelectorAll('.user-list li:nth-child(3)')
         }
     ],
-    email: [
-
-    ],
-    password: [
-
+    email: [{
+        isInvalid: function(input) {
+            let value = patterns[1].email;
+            return !input.value.match(value);
+        },
+        listElems: document.querySelectorAll('.email-list li:nth-child(1)')
+    }],
+    password: [{
+            isInvalid: function(input) {
+                return input.value.length < 8 || input.value.length > 20;
+            },
+            listElems: document.querySelectorAll('.password-list li:nth-child(1)')
+        },
+        {
+            isInvalid: function(input) {
+                return !input.value.match(/[\d]/g);
+            },
+            listElems: document.querySelectorAll('.password-list li:nth-child(2)')
+        },
+        {
+            isInvalid: function(input) {
+                return !input.value.match(/[A-Z]/g);
+            },
+            listElems: document.querySelectorAll('.password-list li:nth-child(3)')
+        },
+        {
+            isInvalid: function(input) {
+                return !input.value.match(/[\@\!\-\+\?]/g);
+            },
+            listElems: document.querySelectorAll('.password-list li:nth-child(4)')
+        }
     ]
-}, ];
+};
 
 const checkRegex = (field, regex) => {
     if (regex.test(field.value)) {
         field.className = 'valid';
+        return true;
     } else {
         field.className = 'invalid';
+        return false;
     }
 };
 
-const validities = (fields) => {
+const validateFormat = fields => {
     fields.forEach(input => {
-        for (let i = 0; i < patterns.length; i++) {
-            let isInvalid = patterns[i].isInvalid(input);
-            let listElems = patterns[i].listItems;
-            console.log(isInvalid);
-            console.log(input.value);
-            console.log(listElems);
-            listElems.forEach(el => {
-                if (el) {
-                    if (isInvalid) {
-                        el.className = 'invalid';
-                    } else {
-                        el.className = 'valid';
-                    }
+        for (let i = 0; i < events.length; i++) {
+            input.addEventListener(events[i], e => {
+                let inputValidities = invalidities[e.target.attributes.name.value];
+                for (let i = 0; i < inputValidities.length; i++) {
+                    let isInvalid = inputValidities[i].isInvalid(input);
+                    let listItems = inputValidities[i].listElems;
+                    listItems.forEach(el => {
+                        if (el) {
+                            if (isInvalid) {
+                                el.className = 'invalid';
+                            } else {
+                                el.className = 'valid';
+                            }
+                        }
+                    });
                 }
             });
         }
     });
-};
+}
 
-const checkInputs = (fields) => {
+const checkInputs = fields => {
     fields.forEach(input => {
-        input.addEventListener('keyup', e => {
-            let regPat = patterns.filter(obj => obj[e.target.attributes.name.value]);
-            checkRegex(e.target, regPat[0][e.target.attributes.name.value]);
-            console.log(regPat);
-            validities(inputs);
-        });
+        for (let i = 0; i < events.length; i++) {
+            input.addEventListener(events[i], e => {
+                let regPat = patterns.filter(obj => obj[e.target.attributes.name.value]);
+                checkRegex(e.target, regPat[0][e.target.attributes.name.value]);
+                console.log(checkRegex(e.target, regPat[0][e.target.attributes.name.value]));
+            });
+        }
     });
 }
 
-checkInputs(inputs);
+const checkAllInputs = fields => {
+    fields.forEach(input => {
+        if (input.value !== "") {
+            return checkInputs(fields), validateFormat(fields);
+        }
+    });
 
-/* let userObj = patterns.filter(obj => obj.listItems);
+}
 
-userObj[0].listItems.forEach(item => {
-    item.className = 'valid';
-});
+checkAllInputs(inputs);
 
-console.log(userObj[0].listItems[1]); */
-
-inputs.forEach(input => {
-    input.addEventListener('focus', e => {
-        console.log(e.target.attributes.name.value);
-    })
-})
+console.log(checkInputs(inputs));

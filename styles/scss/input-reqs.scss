@@ -31,4 +31,9 @@ input:not([type="submit"]):focus+.reg-reqs .input-reqs {
 
 li.valid {
     color: #2ecc71;
+    &::after {
+        content: "\2714";
+        position: absolute;
+        margin-left: 10px;
+    }
 }

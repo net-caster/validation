@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .input-reqs {
   color: #be0000;
   font-family: Helvetica, sans-serif;
@@ -28,6 +29,11 @@ input:not([type=submit]):focus + .reg-reqs .input-reqs {
 
 li.valid {
   color: #2ecc71;
+}
+li.valid::after {
+  content: "✔";
+  position: absolute;
+  margin-left: 10px;
 }
 
 /*# sourceMappingURL=input-reqs.css.map */
