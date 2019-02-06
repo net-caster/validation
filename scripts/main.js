@@ -1,7 +1,6 @@
 const inputs = document.querySelectorAll('input');
 
 // const submit = document.querySelector('input[type="submit"]');
-
 // const form = document.getElementsByClassName('registration');
 
 const events = ['keyup', 'focusout'];
@@ -26,7 +25,7 @@ const invalidities = {
         },
         {
             isInvalid: function(input) {
-                return input.value.match(/[^\w]/g)
+                return input.value.match(/[^\w]/g);
             },
             listElems: document.querySelectorAll('.user-list li:nth-child(2)')
         }
@@ -94,18 +93,18 @@ const validateFormat = fields => {
             });
         }
     });
-}
+};
 
 const checkInputs = fields => {
     fields.forEach(input => {
         for (let i = 0; i < events.length; i++) {
             input.addEventListener(events[i], e => {
                 let regPat = patterns.filter(obj => obj[e.target.attributes.name.value]);
-                checkRegex(e.target, regPat[0][e.target.attributes.name.value])
+                checkRegex(e.target, regPat[0][e.target.attributes.name.value]);
             });
         }
     });
-}
+};
 
 const checkValues = () => {
     for (let i = 0; i < inputs.length; i++) {
@@ -117,11 +116,11 @@ const checkValues = () => {
         }
     }
     return true;
-}
+};
 
 const checkAllInputs = fields => {
     checkInputs(fields);
     validateFormat(fields);
-}
+};
 
 checkAllInputs(inputs);
