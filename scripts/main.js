@@ -1,8 +1,8 @@
 const inputs = document.querySelectorAll('input');
 
-const submit = document.querySelector('input[type="submit"]');
+// const submit = document.querySelector('input[type="submit"]');
 
-const form = document.getElementsByClassName('registration');
+// const form = document.getElementsByClassName('registration');
 
 const events = ['keyup', 'focusout'];
 
@@ -112,6 +112,18 @@ const checkInputs = fields => {
             });
         }
     });
+}
+
+const checkValues = () => {
+    for (let i = 0; i < inputs.length; i++) {
+        let input = inputs[i];
+        for (let j = 0; j < patterns.length; j++) {
+            if (input.value !== patterns[j][input.name]) {
+                return false;
+            }
+            return true;
+        }
+    }
 }
 
 const checkAllInputs = fields => {
