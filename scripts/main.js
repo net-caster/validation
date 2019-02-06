@@ -66,7 +66,7 @@ const invalidities = {
 };
 
 const checkRegex = (field, regex) => {
-    if (regex.test(field.value) || field.value !== '') {
+    if (regex.test(field.value) && field.value !== '') {
         field.className = 'valid';
     } else {
         field.className = 'invalid';
