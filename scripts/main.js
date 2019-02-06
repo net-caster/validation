@@ -7,14 +7,13 @@ const inputs = document.querySelectorAll('input');
 const events = ['keyup', 'focusout'];
 
 const patterns = [{
-        username: /^[a-zA-Z\d]{4,12}$/i,
-
+        username: /^[\w\d]{4,12}$/
     },
     {
         email: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/i
     },
     {
-        password: /^[a-zA-Z\d\@\!\-\+\?]{8,20}$/
+        password: /^(?=.*[a-z])(?=.*[\d])(?=.*[A-Z])(?=.*[\!\?\@\-\+])[a-zA-Z\d\!\?\@\+\-]{8,}$/
     }
 ];
 
@@ -27,15 +26,9 @@ const invalidities = {
         },
         {
             isInvalid: function(input) {
-                return !input.value.match(/[\d]/g);
+                return input.value.match(/[^\w]/g)
             },
             listElems: document.querySelectorAll('.user-list li:nth-child(2)')
-        },
-        {
-            isInvalid: function(input) {
-                return input.value.match(/[^a-zA-Z\d]/g)
-            },
-            listElems: document.querySelectorAll('.user-list li:nth-child(3)')
         }
     ],
     email: [{
@@ -73,7 +66,7 @@ const invalidities = {
 };
 
 const checkRegex = (field, regex) => {
-    if (regex.test(field.value)) {
+    if (regex.test(field.value) || field.value !== '') {
         field.className = 'valid';
     } else {
         field.className = 'invalid';
@@ -117,13 +110,13 @@ const checkInputs = fields => {
 const checkValues = () => {
     for (let i = 0; i < inputs.length; i++) {
         let input = inputs[i];
-        for (let j = 0; j < patterns.length; j++) {
-            if (input.value !== patterns[j][input.name]) {
+        if (input.name !== 'submit' && input.name !== '') {
+            if (input.className !== 'valid') {
                 return false;
             }
-            return true;
         }
     }
+    return true;
 }
 
 const checkAllInputs = fields => {
