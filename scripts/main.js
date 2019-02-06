@@ -1,5 +1,9 @@
 const inputs = document.querySelectorAll('input');
 
+const submit = document.querySelector('input[type="submit"]');
+
+const form = document.getElementsByClassName('registration');
+
 const events = ['keyup', 'focusout'];
 
 const patterns = [{
@@ -71,10 +75,8 @@ const invalidities = {
 const checkRegex = (field, regex) => {
     if (regex.test(field.value)) {
         field.className = 'valid';
-        return true;
     } else {
         field.className = 'invalid';
-        return false;
     }
 };
 
@@ -106,8 +108,7 @@ const checkInputs = fields => {
         for (let i = 0; i < events.length; i++) {
             input.addEventListener(events[i], e => {
                 let regPat = patterns.filter(obj => obj[e.target.attributes.name.value]);
-                checkRegex(e.target, regPat[0][e.target.attributes.name.value]);
-                console.log(checkRegex(e.target, regPat[0][e.target.attributes.name.value]));
+                checkRegex(e.target, regPat[0][e.target.attributes.name.value])
             });
         }
     });
@@ -123,5 +124,3 @@ const checkAllInputs = fields => {
 }
 
 checkAllInputs(inputs);
-
-console.log(checkInputs(inputs));
