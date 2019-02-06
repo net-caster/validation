@@ -115,12 +115,8 @@ const checkInputs = fields => {
 }
 
 const checkAllInputs = fields => {
-    fields.forEach(input => {
-        if (input.value !== "") {
-            return checkInputs(fields), validateFormat(fields);
-        }
-    });
-
+    checkInputs(fields);
+    validateFormat(fields);
 }
 
 checkAllInputs(inputs);
