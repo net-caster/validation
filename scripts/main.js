@@ -77,7 +77,7 @@ const validateFormat = fields => {
         for (let i = 0; i < events.length; i++) {
             input.addEventListener(events[i], e => {
                 let inputValidities = invalidities[e.target.attributes.name.value];
-                for (let i = 0; i < inputValidities.length; i++) {
+                for (let i = 0; j < inputValidities.length; i++) {
                     let isInvalid = inputValidities[i].isInvalid(input);
                     let listItems = inputValidities[i].listElems;
                     listItems.forEach(el => {
@@ -99,8 +99,11 @@ const checkInputs = fields => {
     fields.forEach(input => {
         for (let i = 0; i < events.length; i++) {
             input.addEventListener(events[i], e => {
-                let regPat = patterns.filter(obj => obj[e.target.attributes.name.value]);
-                checkRegex(e.target, regPat[0][e.target.attributes.name.value]);
+                for (let i = 0; i < patterns.length; i++) {
+                    if (patterns[i][e.target.attributes.name.value]) {
+                        checkRegex(e.target, patterns[i][e.target.attributes.name.value]);
+                    }
+                }
             });
         }
     });
