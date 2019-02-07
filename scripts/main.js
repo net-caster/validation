@@ -77,7 +77,7 @@ const validateFormat = fields => {
         for (let i = 0; i < events.length; i++) {
             input.addEventListener(events[i], e => {
                 let inputValidities = invalidities[e.target.attributes.name.value];
-                for (let i = 0; j < inputValidities.length; i++) {
+                for (let i = 0; i < inputValidities.length; i++) {
                     let isInvalid = inputValidities[i].isInvalid(input);
                     let listItems = inputValidities[i].listElems;
                     listItems.forEach(el => {
