@@ -90,13 +90,13 @@ Form styling -----------------------------------------
 .form .register-content input[name=password].valid,
 .form .register-content input[name=email].valid {
   color: black;
-  background: #2ecc71;
+  background: #FFF;
 }
 .form .register-content input[name=username].valid:focus,
 .form .register-content input[name=password].valid:focus,
 .form .register-content input[name=email].valid:focus {
   color: black;
-  background: #2ecc71;
+  background: #FFF;
   border-color: rgba(0, 0, 0, 0);
 }
 .form .register-content input[name=username].invalid,

@@ -71,10 +71,10 @@ Form styling -----------------------------------------
             }
             &.valid {
                 color: black;
-                background: rgb(46, 204, 113);
+                background: #FFF;
                 &:focus {
                     color: black;
-                    background: rgb(46, 204, 113);
+                    background: #FFF;
                     border-color: rgba(0, 0, 0, 0);
                 }
             }
